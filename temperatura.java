@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class temperatura {
     public static void main (String[] args){
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Digite a temperatura em celsius");
+            System.out.println("Digite a temperatura em celsius: ");
             double c = scanner.nextDouble();
             
       
