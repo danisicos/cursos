@@ -1,3 +1,5 @@
+#Exercício: Código que solicite a entrada de uma determinada em Celsius e apresente a conversão para outras unidades.
+
 class temperatura:
     c = int(input("Digite a temperatura em celsius: "))
     f = c * 18 + 32

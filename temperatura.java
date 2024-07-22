@@ -1,3 +1,5 @@
+//Exercício: Código que solicite a entrada de uma determinada em Celsius e apresente a conversão para outras unidades.
+
 import java.util.Scanner;
 public class temperatura {
     public static void main (String[] args){
