@@ -16,9 +16,9 @@
          String primo;
  
          System.out.print("Digite um número: ");
-         try (Scanner scanner = new Scanner(System.in)) {
+         Scanner scanner = new Scanner(System.in);
              numero = scanner.nextInt();
-         }
+             scanner.close();
  
          // Avaliação do sinal
          sinal = avaliarSinal(numero);
