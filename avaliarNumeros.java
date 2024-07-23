@@ -5,46 +5,62 @@
  * Indique se o número é primo
  */
 
-import java.util.Scanner;
+ import java.util.Scanner;
 
-public class avaliarNumeros {
-    public static void main(String[] args) {
-        //bloco de declaração das variáveis
-        
-        int numero = 0;
-        String sinal = "valor inválido";
-        String par = "valor inválido";
-        String primo = "valor inválido";
-
-        System.out.println("Digite um número: ");
-        try (Scanner scanner = new Scanner(System.in)) {
-            numero = scanner.nextInt();
-        }
-
-        //bloco das condicionais
-
-        if (numero>=0)
-            sinal = "é positivo";
-        else 
-            sinal = "é negativo";
-
-        if (numero%2==0)
-            par = "é par";
-        else
-            par = "é ímpar";
-
-        for (int i=2; i<=Math.sqrt(numero); i++){ //implementação simplificada
-            if (numero%i==0)
-                primo = "não é primo";
-            else
-                primo = "é primo";
-        }
-
-        //bloco da impressão dos resultados
-
-        System.out.println("O número digitado foi " + numero);
-        System.out.println("O número digitado " + sinal);
-        System.out.println("O número digitado " + par);
-        System.out.println("O número digitado " + primo);
-    }
-}
+ public class AvaliarNumeros {
+     public static void main(String[] args) {
+         // Declaração das variáveis
+         int numero;
+         String sinal;
+         String par;
+         String primo;
+ 
+         System.out.print("Digite um número: ");
+         try (Scanner scanner = new Scanner(System.in)) {
+             numero = scanner.nextInt();
+         }
+ 
+         // Avaliação do sinal
+         sinal = avaliarSinal(numero);
+ 
+         // Avaliação de paridade
+         par = avaliarParidade(numero);
+ 
+         // Avaliação de número primo
+         primo = avaliarPrimo(numero);
+ 
+         // Impressão dos resultados
+         System.out.println(String.format("O número digitado foi %d", numero));
+         System.out.println(String.format("O número digitado %s", sinal));
+         System.out.println(String.format("O número digitado %s", par));
+         System.out.println(String.format("O número digitado %s", primo));
+     }
+ 
+     private static String avaliarSinal(int numero) {
+         if (numero >= 0) {
+             return "é positivo";
+         } else {
+             return "é negativo";
+         }
+     }
+ 
+     private static String avaliarParidade(int numero) {
+         if (numero % 2 == 0) {
+             return "é par";
+         } else {
+             return "é ímpar";
+         }
+     }
+ 
+     private static String avaliarPrimo(int numero) {
+         if (numero <= 1) {
+             return "não é primo";
+         }
+         for (int i = 2; i <= Math.sqrt(numero); i++) {
+             if (numero % i == 0) {
+                 return "não é primo";
+             }
+         }
+         return "é primo";
+     }
+ }
