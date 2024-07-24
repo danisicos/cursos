@@ -3,35 +3,42 @@
 # Indique se o número é ímpar ou par
 # Indique se o número é primo
 
-class avaliarNumeros:
-    #bloco de declaração das variáveis
-    numero = 0
-    sinal = "valor inválido"
-    par = "valor inválido"
-    primo = "valor inválido"
+class AvaliarNumeros:
+    def __init__(self, numero):
+        self.numero = numero
+        self.sinal = self.verificar_sinal()
+        self.par = self.verificar_paridade()
+        self.primo = self.verificar_primalidade()
 
-    numero = int(input("Digite um número: "))
-
-    #bloco das condicionais
-    if (numero>=0):
-        sinal = " é positivo"
-    else:
-        sinal = " é negativo"
-
-    if (numero%2==0):
-        par = " é par"
-    else:
-        par = "é ímpar"
-
-    for i in range(2, int(numero**0.5) + 1):
-        if (numero%i==0):
-            primo = " não é primo"
+    def verificar_sinal(self):
+        if self.numero >= 0:
+            return "é positivo"
         else:
-            primo = " é primo"
+            return "é negativo"
 
-    #bloco da impressão dos resultados
-    print(f"O número digitado foi {numero}")
-    print(f"O número digitado {sinal}")
-    print(f"O número digitado {par}")
-    print(f"O número digitado {primo}")
+    def verificar_paridade(self):
+        if self.numero % 2 == 0:
+            return "é par"
+        else:
+            return "é ímpar"
 
+    def verificar_primalidade(self):
+        if self.numero <= 1:
+            return "não é primo"
+        for i in range(2, int(self.numero**0.5) + 1):
+            if self.numero % i == 0:
+                return "não é primo"
+        return "é primo"
+
+    def imprimir_resultados(self):
+        print(f"O número digitado foi {self.numero}")
+        print(f"O número digitado {self.sinal}")
+        print(f"O número digitado {self.par}")
+        print(f"O número digitado {self.primo}")
+
+# Entrada do número pelo usuário
+numero = int(input("Digite um número: "))
+
+# Criação da instância da classe e impressão dos resultados
+avaliacao = AvaliarNumeros(numero)
+avaliacao.imprimir_resultados()
