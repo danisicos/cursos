@@ -4,12 +4,10 @@ def selection_sort(arr, size):
     for i in range(size):
         # Inicialmente, defina o menor índice como o índice atual
         min_index = i
-
         # Encontre o menor elemento na sublista restante
         for j in range(i + 1, size):
             if arr[j] < arr[min_index]:
                 min_index = j
-
         # Troque o menor elemento encontrado com o elemento no índice atual
         arr[i], arr[min_index] = arr[min_index], arr[i]
 
