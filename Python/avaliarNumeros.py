@@ -22,6 +22,7 @@ class AvaliarNumeros:
         else:
             return "é ímpar"
 
+
     def verificar_primalidade(self):
         if self.numero <= 1:
             return "não é primo"
