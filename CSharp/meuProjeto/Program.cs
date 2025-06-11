@@ -1,4 +1,18 @@
-﻿int c = 10;
-int d = 20;
-int e = c + d;
-Console.WriteLine(e);
+﻿class animal
+{
+    public string nome;
+    public int idade;
+
+    public void fazerBarulho()
+    {
+        Console.WriteLine("O animal faz barulho");
+    }
+}
+
+class cachorro : animal
+{
+    public void fazerBarulho()
+    {
+        Console.WriteLine("O cachorro late");
+    }
+}

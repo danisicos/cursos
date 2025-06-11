@@ -1,3 +1,17 @@
-const num = 1_2_3_4_5 + 1_0;
+function outer() {
+    var count = 0;
+    return function inner() {
+        count++;
+        console.log(count);
+    }
+}
 
-console.log(num)
+const counter1 = outer();
+counter1(); // 1
+counter1(); // 2  
+
+const counter2 = outer();
+counter2(); // 1
+counter1(); // 3
+
+console.log(count)
